@@ -3,11 +3,11 @@ replicaCount: 1
 image:
   pullPolicy: IfNotPresent
 
-cpu: "2"       # Number of CPU workers
-io: "1"        # Number of IO workers
-vm: "2"        # Number of VM workers
-vmbytes: "128M" # Amount of memory to stress
-timeout: "10s" # Run for 10 seconds
+cpu: "2"
+io: "1"
+vm: "1"
+vmbytes: "128M"
+timeout: "10s"
 
 resources:
   limits:
