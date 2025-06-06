@@ -1,5 +1,5 @@
 image:
-  repository: mdundek/node-resource-test:latest
+  repository: mdundek/node-resource-test
   tag: latest
   pullPolicy: Always
 
