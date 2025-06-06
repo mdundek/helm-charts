@@ -1,0 +1,22 @@
+image:
+  repository: mdundek/node-resource-test:latest
+  tag: latest
+  pullPolicy: Always
+
+# imagePullSecrets: 
+#  - name: my-dockerhub-secret
+
+service:
+  type: NodePort
+  port: 3000
+  nodePort: 30001
+
+replicaCount: 1
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 256Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
