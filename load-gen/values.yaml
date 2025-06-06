@@ -3,7 +3,7 @@ replicaCount: 1
 image:
   pullPolicy: IfNotPresent
 
-cpu: "2"
+cpu: "1"
 io: "1"
 vm: "1"
 vmbytes: "128M"
