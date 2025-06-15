@@ -12,6 +12,10 @@ service:
     port: 3000
     targetPort: 3000
 
+# ingress:
+#   hostname: starship
+#   targetService: http
+
 replicaCount: 1
 
 resources:
