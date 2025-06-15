@@ -7,9 +7,10 @@ image:
 #  - name: my-dockerhub-secret
 
 service:
-  type: ClusterIP
-  port: 3000
-  targetPort: 3000
+  - name: http
+    type: ClusterIP
+    port: 3000
+    targetPort: 3000
 
 replicaCount: 1
 

@@ -1,14 +1,18 @@
+{{- range .Values.service }}
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "my-node-app.fullname" . }}
+  name: {{ .name }}
 spec:
-  type: {{ .Values.service.type }}
+  type: {{ .type | default "ClusterIP" }}
+  ports:
+    - port: {{ .port }}
+      targetPort: {{ .targetPort }}
+      {{- if eq .type "NodePort" }}
+      nodePort: {{ .nodePort }}
+      {{- end }}
+      name: {{ .name }}
   selector:
     app: {{ include "my-node-app.fullname" . }}
-  ports:
-    - port: {{ .Values.service.port }}
-      targetPort: {{ .Values.service.targetPort }}
-      {{- if eq .Values.service.type "NodePort" }}
-      nodePort: {{ .Values.service.nodePort }}
-      {{- end }}
+---
+{{- end }}
