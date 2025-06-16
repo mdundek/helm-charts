@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "my-node-app.fullname" . }}
+  name: {{ include "starship-app.fullname" . }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: {{ include "my-node-app.fullname" . }}
+      app: {{ include "starship-app.fullname" . }}
   template:
     metadata:
       labels:
-        app: {{ include "my-node-app.fullname" . }}
+        app: {{ include "starship-app.fullname" . }}
     spec:
       {{- if .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml .Values.imagePullSecrets | nindent 8 }}
       {{- end }}
       containers:
-        - name: my-node-app
+        - name: starship-app
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
