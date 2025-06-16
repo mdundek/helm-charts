@@ -1,6 +1,6 @@
 image:
-  repository: mdundek/node-resource-test
-  tag: latest
+  repository: mdundek/dummy-starship-command
+  tag: 2.1.3
   pullPolicy: Always
 
 # imagePullSecrets: 
